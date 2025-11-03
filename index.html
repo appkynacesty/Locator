@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokátor Služieb 🧭</title>
+    <style>
+        /* CSS zostáva rovnaký pre jednoduchosť */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 5vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .action-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #1a73e8;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.1s;
+        }
+
+        .action-button.restaurants { background-color: #ea4335; }
+        .action-button.museums { background-color: #fbbc04; }
+        .action-button.rentals { background-color: #34a853; }
+        .action-button.groceries { background-color: #4285f4; }
+        .action-button.parking { background-color: #7047a1; }
+
+        .action-button:hover { opacity: 0.9; }
+        .action-button:active { transform: scale(0.98); }
+
+        .status-message {
+            color: #333;
+            font-size: 14px;
+            min-height: 20px;
+            margin-top: 30px;
+        }
+
+        .pwa-tip {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.4;
+        }
+        .pwa-tip strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #1a73e8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vyhľadať v okolí</h1>
+
+        <div class="button-group">
+            <button class="action-button restaurants" onclick="findPlaces('restaurants')">
+                🍽️ Reštaurácie
+            </button>
+            <button class="action-button museums" onclick="findPlaces('museums and historical places')">
+                🏛️ Pamiatky a Múzeá
+            </button>
+            <button class="action-button rentals" onclick="findPlaces('car rental, bike rental, scooter rental')">
+                🚗 Požičovne
+            </button>
+            <button class="action-button groceries" onclick="findPlaces('groceries and supermarkets')">
+                🛒 Potraviny a Obchody
+            </button>
+            <button class="action-button parking" onclick="findPlaces('parking lots and garages')">
+                🅿️ Parkovisko
+            </button>
+        </div>
+
+        <p class="status-message" id="status">Vyberte kategóriu, ktorú chcete nájsť.</p>
+        
+        <div class="pwa-tip">
+            <strong>TIP: Používajte ako aplikáciu!</strong>
+            Pre najrýchlejší prístup kliknite v prehliadači na **tri bodky** (⋮) a zvoľte **"Pridať na plochu"**. Vytvoríte si tak ikonu pre okamžité spustenie.
+        </div>
+    </div>
+
+    <script>
+        function findPlaces(query) {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = `Zisťujem polohu pre "${query}"... 🛰️`;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        
+                        statusElement.textContent = `Poloha zistená! Otváram Mapy...`;
+
+                        // NOVÉ: Najčistejší formát URL (Google Maps API query)
+                        const mapsUrl = `http://googleusercontent.com/maps.google.com/search?api=1&query=${encodeURIComponent(query)}&center=${lat},${lon}`;
+                        
+                        // Priame presmerovanie, ktoré raz fungovalo
+                        window.location.href = mapsUrl;
+
+
+                        // Návrat k pôvodnému stavu
+                        setTimeout(() => {
+                            statusElement.textContent = 'Vyberte kategóriu, ktorú chcete nájsť.'; 
+                        }, 2000);
+
+                    },
+                    (error) => {
+                        // Spracovanie chýb
+                        let errorMessage = "Nastala neznáma chyba.";
+                        if (error.code === error.PERMISSION_DENIED) {
+                            errorMessage = "Prístup k polohe zamietnutý. Povoľte polohu v nastaveniach prehliadača.";
+                        } else if (error.code === error.POSITION_UNAVAILABLE) {
+                            errorMessage = "Informácie o polohe nie sú dostupné. Skúste to znova neskôr.";
+                        } else if (error.code === error.TIMEOUT) {
+                            errorMessage = "Vypršal časový limit. Skúste to znova.";
+                        }
+                        statusElement.textContent = `Chyba: ${errorMessage}`;
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                statusElement.textContent = "Váš prehliadač nepodporuje geolokáciu.";
+            }
+        }
+    </script>
+</body>
+</html>
