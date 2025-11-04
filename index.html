@@ -144,35 +144,21 @@
             statusElement.classList.add('error-message');
         }
 
-        function submitSearch(query, lat, lon) {
-            // Použitie dvojfázového presmerovania cez formulár
-            const form = document.createElement('form');
-            // Najčistejší formát akcie Google Maps URL API
-            form.action = `https://www.google.com/maps/search/`; 
-            form.method = 'GET';
-            form.target = '_blank';
-            form.style.display = 'none';
+                function submitSearch(query, lat, lon) {
+            // Vytvorenie URL v staršom, ale univerzálnejšom formáte /search?q=query&ll=lat,lon
+            // LL (Latitude/Longitude) zaisťuje, že mapa sa vycentruje na správne miesto.
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}&center=${lat},${lon}`;
+            
+            // KONTROLA: Uistíme sa, že URL je správne vytvorená
+            // console.log("Final URL:", mapsUrl);
 
-            // 1. Vyhľadávací dopyt
-            const inputQuery = document.createElement('input');
-            inputQuery.type = 'hidden';
-            inputQuery.name = 'query';
-            inputQuery.value = query;
-            form.appendChild(inputQuery);
+            // Použijeme priame presmerovanie cez okno, pretože formulár je blokovaný.
+            // Je to bezpečnejšie, keďže sme vyčistili cache.
 
-            // 2. Centrum mapy
-            const inputCenter = document.createElement('input');
-            inputCenter.type = 'hidden';
-            inputCenter.name = 'center';
-            inputCenter.value = `${lat},${lon}`;
-            form.appendChild(inputCenter);
-
-            // 3. Spustenie a vyčistenie
-            document.body.appendChild(form);
-            form.submit();
+            displayStatus(`Otváram Mapy pre ${query}...`);
+            window.open(mapsUrl, '_blank'); // Otvorí v novom okne/karte
 
             setTimeout(() => {
-                document.body.removeChild(form);
                 displayStatus('Vyberte kategóriu, ktorú chcete nájsť.'); 
             }, 1000);
         }
@@ -227,3 +213,4 @@
     </script>
 </body>
 </html>
+
