@@ -175,6 +175,12 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+              box-sizing: border-box; /* Zabezpečí, že padding nepridá extra šírku */
+            min-width: 0; /* KĽÚČOVÉ: Umožní elementu zmenšiť sa pod flex */
+        }
+        
+        .calculator-input-group select {
+            max-width: 50%; /* Aby sa select neťahal nekontrolovateľne */
         }
 
         .calculator-input-group input {
@@ -531,5 +537,6 @@
     </script>
 </body>
 </html>
+
 
 
