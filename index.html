@@ -128,17 +128,26 @@
                         
                         statusElement.textContent = `Poloha zistená! Otváram Mapy...`;
 
-                        // NOVÉ: Najčistejší formát URL (Google Maps API query)
-                        const mapsUrl = `http://googleusercontent.com/maps.google.com/search?api=1&query=${encodeURIComponent(query)}&center=${lat},${lon}`;
+                        // POUŽITIE HTTPS A API FORMATU S OTVÁRANÍM CEZ SIMULÁCIU KLIKU
+                        const mapsUrl = `https://googleusercontent.com/maps.google.com/search?api=1&query=${encodeURIComponent(query)}&center=${lat},${lon}`;
                         
-                        // Priame presmerovanie, ktoré raz fungovalo
-                        window.location.href = mapsUrl;
+                        // --- Spoľahlivé otvorenie odkazu cez simuláciu kliku ---
+                        const link = document.createElement('a');
+                        link.href = mapsUrl;
+                        link.target = '_blank'; // Otvoriť v novom okne, čo niekedy obchádza blokovanie
+                        link.style.display = 'none';
+                        document.body.appendChild(link);
 
-
-                        // Návrat k pôvodnému stavu
+                        // Asynchrónne spustenie kliknutia
                         setTimeout(() => {
+                           link.click();
+                        }, 50); // Veľmi krátke oneskorenie pre spustenie
+
+                        // Vyčistenie
+                        setTimeout(() => {
+                            document.body.removeChild(link);
                             statusElement.textContent = 'Vyberte kategóriu, ktorú chcete nájsť.'; 
-                        }, 2000);
+                        }, 1000);
 
                     },
                     (error) => {
