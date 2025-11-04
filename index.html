@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokročilý Cestovateľský Lokátor</title>
+    <title>Všetko nájdeš jedným klikom</title>
     <style>
         /* --- CSS Štýly pre Dizajn --- */
         body {
@@ -150,7 +150,8 @@
             margin-top: 0;
             color: #e74c3c;
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.2em; /* Menšia veľkosť pre dlhší text */
+            line-height: 1.4;
         }
 
         #ai-input {
@@ -236,11 +237,11 @@
 <body>
 
     <div id="myNav" class="menu-overlay">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
         <div class="menu-overlay-content">
-            <a href="#basic" onclick="closeNav()">Základné Potreby</a>
-            <a href="#service" onclick="closeNav()">Servis a Údržba</a>
-            <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady</a>
+            <a href="#basic" onclick="closeNav()">Základné Potreby (1. Sekcia)</a>
+            <a href="#service" onclick="closeNav()">Servis a Údržba (2. Sekcia)</a>
+            <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady (3. Sekcia)</a>
             <div style="height: 50px;"></div>
             <a href="#ai-assistance-section" onclick="closeNav()">AI Asistencia</a>
         </div>
@@ -249,14 +250,14 @@
     <div class="menu-btn" onclick="openNav()">MENU</div>
 
     <div class="container">
-        <h1>Pokročilý Cestovateľský Lokátor</h1>
+        <h1>Všetko nájdeš jedným klikom</h1>
         
         <div class="spinner" id="loading-spinner"></div>
         <div id="status"></div>
         
         <section id="ai-assistance-section-top">
             <div id="ai-assistance">
-                <h2>AI ASISTENCIA</h2>
+                <h2>Čo nie je v ponuke ti nájde AI. Povedz mi alebo napíš, čo hľadáš.</h2>
                 <input type="text" id="ai-input-top" placeholder="Zadajte, čo hľadáte (napr. Čínska reštaurácia)...">
                 <div id="ai-actions">
                     <button id="search-btn-top">Vyhľadať (Text)</button>
@@ -267,10 +268,13 @@
 
         <h2 id="basic">Základné Potreby</h2>
         <div class="btn-grid">
-            <button class="action-btn" data-query="gas station and petrol pump">⛽ Čerpacia stanica</button>
             <button class="action-btn" data-query="restaurant and local dining">🍽️ Reštaurácia</button>
             <button class="action-btn" data-query="supermarket and grocery store">🛒 Supermarket</button>
+            <button class="action-btn" data-query="gas station and petrol pump">⛽ Čerpacia stanica</button>
             <button class="action-btn" data-query="bank or ATM">🏧 Bankomat / Banka</button>
+            <button class="action-btn" data-query="public parking lot">🅿️ Parkovisko</button>
+            <button class="action-btn" data-query="museum and historical landmark">🏛️ Múzeá / Pamiatky</button>
+            <button class="action-btn" data-query="hotel and accommodation and hostel">🏨 Ubytovanie</button>
         </div>
 
         <h2 id="service">Servis a Údržba</h2>
@@ -293,9 +297,9 @@
             <button class="action-btn" data-query="quiet local park and green space">🌳 Tichý Park</button>
         </div>
         
-        <section id="ai-assistance-section-bottom">
+        <section id="ai-assistance-section">
             <div id="ai-assistance">
-                <h2>AI ASISTENCIA</h2>
+                <h2>Čo nie je v ponuke ti nájde AI. Povedz mi alebo napíš, čo hľadáš.</h2>
                 <input type="text" id="ai-input-bottom" placeholder="Zadajte, čo hľadáte (napr. Čínska reštaurácia)...">
                 <div id="ai-actions">
                     <button id="search-btn-bottom">Vyhľadať (Text)</button>
@@ -442,17 +446,21 @@
             const longitude = position.coords.longitude;
             const accuracy = position.coords.accuracy;
             
-            // Kontrola Presnosti
+            // Kontrola Presnosti (< 5 km)
             if (accuracy > MAX_ACCURACY) {
                 displayStatus(STATUS_FAIL_ACCURACY + ` (Presnosť: ${Math.round(accuracy)}m)`, true);
                 return;
             }
+            
+            // Kontrola či Query nie je prázdna (ak by náhodou bola)
+            const finalQuery = currentQuery || 'local points of interest';
 
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentQuery)}&ll=${latitude},${longitude}`;
+            // Univerzálny formát URL pre Google Maps (využitie predošlej lekcie)
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(finalQuery)}&ll=${latitude},${longitude}`;
 
-            // Používame window.open na otvorenie nového okna/záložky s vyhľadávaním na mapách
+            // Otvorenie nového okna/záložky (využitie predošlej lekcie)
             window.open(mapsUrl, '_blank');
-            displayStatus(`✅ Poloha nájdená. Otváram Mapy s vyhľadávaním: ${currentQuery}.`, false);
+            displayStatus(`✅ Poloha nájdená. Otváram Mapy s vyhľadávaním: ${finalQuery}.`, false);
 
             // Vyčistenie AI vstupu po úspešnom vyhľadaní
             document.getElementById('ai-input-top').value = '';
