@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokátor Služieb 🧭</title>
     <style>
-        /* CSS zostáva rovnaký pre jednoduchosť */
+        /* Základné štýly */
         body {
             display: flex;
             flex-direction: column;
@@ -37,24 +37,28 @@
             margin-bottom: 20px;
         }
 
+        /* Všeobecný štýl pre všetky tlačidlá */
         .action-button {
             padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
             color: white;
-            background-color: #1a73e8;
+            background-color: #1a73e8; /* Default modrá */
             border: none;
             border-radius: 12px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, transform 0.1s;
         }
-
-        .action-button.restaurants { background-color: #ea4335; }
-        .action-button.museums { background-color: #fbbc04; }
-        .action-button.rentals { background-color: #34a853; }
-        .action-button.groceries { background-color: #4285f4; }
-        .action-button.parking { background-color: #7047a1; }
+        
+        /* Špecifické farby pre kategórie */
+        .action-button.restaurants { background-color: #ea4335; } /* Červená - Reštaurácie */
+        .action-button.museums { background-color: #fbbc04; }    /* Žltá - Pamiatky */
+        .action-button.rentals { background-color: #34a853; }    /* Zelená - Požičovne */
+        .action-button.groceries { background-color: #4285f4; }   /* Modrá - Potraviny */
+        .action-button.parking { background-color: #7047a1; }     /* Fialová - Parkovisko */
+        .action-button.lodging { background-color: #a728b9; }     /* Fialová - Ubytovanie (Nové) */
+        .action-button.camping { background-color: #38b2ac; }     /* Tyrkysová - Kempy (Nové) */
 
         .action-button:hover { opacity: 0.9; }
         .action-button:active { transform: scale(0.98); }
@@ -64,6 +68,11 @@
             font-size: 14px;
             min-height: 20px;
             margin-top: 30px;
+        }
+        
+        .error-message {
+            color: #ea4335;
+            font-weight: bold;
         }
 
         .pwa-tip {
@@ -105,6 +114,12 @@
             <button class="action-button parking" onclick="findPlaces('parking lots and garages')">
                 🅿️ Parkovisko
             </button>
+            <button class="action-button lodging" onclick="findPlaces('hotels and apartments for rent')">
+                🏨 Ubytovanie
+            </button>
+            <button class="action-button camping" onclick="findPlaces('campgrounds and RV parks')">
+                ⛺ Kempy
+            </button>
         </div>
 
         <p class="status-message" id="status">Vyberte kategóriu, ktorú chcete nájsť.</p>
@@ -116,57 +131,75 @@
     </div>
 
     <script>
+        const statusElement = document.getElementById('status');
+        const MAX_ACCURACY = 5000; // Maximálna akceptovateľná nepresnosť v metroch (5 km)
+
+        function displayStatus(message) {
+            statusElement.textContent = message;
+            statusElement.classList.remove('error-message');
+        }
+
+        function displayError(message) {
+            statusElement.textContent = message;
+            statusElement.classList.add('error-message');
+        }
+
+        function submitSearch(query, lat, lon) {
+            // Použitie dvojfázového presmerovania cez formulár
+            const form = document.createElement('form');
+            // Najčistejší formát akcie Google Maps URL API
+            form.action = `https://www.google.com/maps/search/`; 
+            form.method = 'GET';
+            form.target = '_blank';
+            form.style.display = 'none';
+
+            // 1. Vyhľadávací dopyt
+            const inputQuery = document.createElement('input');
+            inputQuery.type = 'hidden';
+            inputQuery.name = 'query';
+            inputQuery.value = query;
+            form.appendChild(inputQuery);
+
+            // 2. Centrum mapy
+            const inputCenter = document.createElement('input');
+            inputCenter.type = 'hidden';
+            inputCenter.name = 'center';
+            inputCenter.value = `${lat},${lon}`;
+            form.appendChild(inputCenter);
+
+            // 3. Spustenie a vyčistenie
+            document.body.appendChild(form);
+            form.submit();
+
+            setTimeout(() => {
+                document.body.removeChild(form);
+                displayStatus('Vyberte kategóriu, ktorú chcete nájsť.'); 
+            }, 1000);
+        }
+
         function findPlaces(query) {
-            const statusElement = document.getElementById('status');
-            statusElement.textContent = `Zisťujem polohu pre "${query}"... 🛰️`;
+            displayStatus(`Zisťujem polohu pre "${query}"... 🛰️`);
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
                         const lat = position.coords.latitude;
                         const lon = position.coords.longitude;
-                        
-                        statusElement.textContent = `Poloha zistená! Otváram Mapy...`;
+                        const accuracy = position.coords.accuracy;
 
-                        // 1. Vytvorenie čistej URL pre vyhľadávanie
-                        const mapsQuery = `${encodeURIComponent(query)}&center=${lat},${lon}`;
-                        
-                        // 2. Vytvorenie dynamického formulára na odoslanie na Google Mapy
-                        const form = document.createElement('form');
-                        form.action = `https://www.google.com/maps/search/`; // Najčistejšia možná akcia
-                        form.method = 'GET';
-                        form.target = '_blank';
-                        form.style.display = 'none';
+                        // KONTROLA PRESNOSTI
+                        if (accuracy > MAX_ACCURACY) {
+                            const km_accuracy = Math.round(accuracy / 1000);
+                            displayError(`
+                                Poloha je príliš nepresná (± ${km_accuracy} km). 
+                                Vyhľadávanie je pozastavené. Skúste prosím zlepšiť signál (GPS/WiFi).
+                            `);
+                            return; // Zastaví vykonávanie
+                        }
 
-                        // Vloženie vyhľadávacieho dopytu ako poľa 'q'
-                        const inputQ = document.createElement('input');
-                        inputQ.type = 'hidden';
-                        inputQ.name = 'api'; // Aby bol formát query čistý
-                        inputQ.value = 1;
-                        form.appendChild(inputQ);
-
-                        const inputCenter = document.createElement('input');
-                        inputCenter.type = 'hidden';
-                        inputCenter.name = 'query';
-                        inputCenter.value = `${query}`;
-                        form.appendChild(inputCenter);
-
-                        const inputLL = document.createElement('input');
-                        inputLL.type = 'hidden';
-                        inputLL.name = 'center';
-                        inputLL.value = `${lat},${lon}`;
-                        form.appendChild(inputLL);
-
-
-                        // 3. Pripojenie formulára a okamžité odoslanie
-                        document.body.appendChild(form);
-                        form.submit();
-
-                        // 4. Vyčistenie
-                        setTimeout(() => {
-                            document.body.removeChild(form);
-                            statusElement.textContent = 'Vyberte kategóriu, ktorú chcete nájsť.'; 
-                        }, 1000);
+                        // Ak je presné
+                        displayStatus(`Poloha zistená! Otváram Mapy...`);
+                        submitSearch(query, lat, lon);
 
                     },
                     (error) => {
@@ -177,18 +210,18 @@
                         } else if (error.code === error.POSITION_UNAVAILABLE) {
                             errorMessage = "Informácie o polohe nie sú dostupné. Skúste to znova neskôr.";
                         } else if (error.code === error.TIMEOUT) {
-                            errorMessage = "Vypršal časový limit. Skúste to znova.";
+                            errorMessage = "Vypršal časový limit (5 sekúnd). Skúste to znova.";
                         }
-                        statusElement.textContent = `Chyba: ${errorMessage}`;
+                        displayError(`Chyba: ${errorMessage}`);
                     },
                     {
                         enableHighAccuracy: true,
-                        timeout: 10000,
+                        timeout: 5000,
                         maximumAge: 0
                     }
                 );
             } else {
-                statusElement.textContent = "Váš prehliadač nepodporuje geolokáciu.";
+                displayError("Váš prehliadač nepodporuje geolokáciu.");
             }
         }
     </script>
