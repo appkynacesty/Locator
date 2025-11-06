@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Lístky na MHD v Európe</title>
+    <style>
+        /* --- Importované a Upravené CSS Štýly --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- TLAČIDLO SPÄŤ --- */
+        .back-btn { 
+            display: inline-block; 
+            padding: 10px 15px; 
+            background-color: #e74c3c; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            margin-bottom: 30px; 
+            font-weight: bold; 
+        }        
+        .back-btn:hover { 
+            background-color: #c0392b; 
+        }
+        /* ----------------------- */
+        
+        /* Obsah stránky */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            scroll-margin-top: 80px;
+        }
+        
+        /* Štýl pre odkaz na MHD, konzistentný s action-btn */
+        .mhd-link-btn {
+            display: block;
+            padding: 15px 15px;
+            background-color: #ffffff;
+            color: #333; 
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: flex; 
+            align-items: center;
+        }
+
+        .mhd-link-btn:hover {
+            background-color: #f5f5f5; 
+            color: #007bff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .mhd-link-btn strong {
+            color: #007bff; 
+            margin-right: 5px;
+        }
+
+        .flag-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            line-height: 1; 
+        }
+
+        .city-group {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div style="padding-top: 20px; text-align: left; max-width: 900px; margin: 0 auto; padding-left: 20px;">
+    <a href="index.html" class="back-btn">← Späť na Okolie</a>
+</div>
+
+<div class="container">
+    <h1>🚌 Online Lístky na MHD v Európe</h1>
+    <p>Priamy odkaz na nákup lístkov, aplikácie a oficiálne informácie o MHD v kľúčových európskych metropolách.</p>
+    <p style="font-size: 0.9em; color: #7f8c8d;">*Väčšina dopravcov preferuje nákup cez mobilnú aplikáciu.</p>
+    
+    
+    <h2>🇸🇰 Slovensko</h2>
+    <div class="city-group">
+        <a href="https://dpb.sk/sk/kupte-si-elektricenku-online" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇸🇰</span> 
+            <strong>Bratislava</strong> (DPB) - E-shop na kúpu predplatných lístkov (električenky).
+        </a>
+        <a href="https://idsbk.sk/listky-ceny/predaj/ecl/" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇸🇰</span> 
+            <strong>Bratislava</strong> (IDS BK) - Informácie o elektronických lístkoch (eCL).
+        </a>
+    </div>
+
+    <h2>🇨🇿 Česká republika</h2>
+    <div class="city-group">
+        <a href="https://pid.cz/informace-k-cestovani/mobilni-aplikace/" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇨🇿</span> 
+            <strong>Praha</strong> (PID) - Mobilná aplikácia PID Lítačka (lístky, kupóny, vyhľadávanie spojov).
+        </a>
+        <a href="https://www.dpp.cz/kontakt/casto-kladene-dotazy/detail/44_347-jak-objednat-sms-jizdenku" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇨🇿</span> 
+            <strong>Praha</strong> (DPP) - Informácie o SMS cestovných lístkoch.
+        </a>
+    </div>
+
+    <h2>🇦🇹 Rakúsko</h2>
+    <div class="city-group">
+        <a href="https://www.wienerlinien.at/einfach-unterwegs/tickets-preise/online-kaufen" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇦🇹</span> 
+            <strong>Viedeň</strong> (Wiener Linien) - Oficiálny internetový obchod pre lístky a ročné kupóny.
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=at.wienerlinien.wienmobil" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇦🇹</span> 
+            <strong>Viedeň</strong> - Aplikácia WienMobil (nákup lístkov a vyhľadávanie trasy).
+        </a>
+    </div>
+
+    <h2>🇭🇺 Maďarsko</h2>
+    <div class="city-group">
+        <a href="https://bkk.hu/en/tickets-and-passes/budapestgo/" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇭🇺</span> 
+            <strong>Budapešť</strong> (BKK) - Aplikácia BudapestGO (digitálne lístky a plánovanie ciest).
+        </a>
+        <a href="https://bkk.hu/en/tickets-and-passes/purchase-information/mobile-ticket/" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇭🇺</span> 
+            <strong>Budapešť</strong> (BKK) - Všeobecné informácie o mobilných lístkoch.
+        </a>
+    </div>
+
+    <h2>🇩🇪 Nemecko</h2>
+    <div class="city-group">
+        <a href="https://play.google.com/store/apps/details?id=de.bvg.ticket" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇩🇪</span> 
+            <strong>Berlín</strong> (BVG) - Aplikácia BVG Ticket App (nákup lístkov na metro, S-Bahn, električky).
+        </a>
+        <a href="https://sbahn.berlin/en/tickets/" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇩🇪</span> 
+            <strong>Berlín</strong> (S-Bahn) - Prehľad a online nákup lístkov.
+        </a>
+    </div>
+    
+    <h2>🇫🇷 Francúzsko</h2>
+    <div class="city-group">
+        <a href="https://www.iledefrance-mobilites.fr/en/tickets-fares/navigo-easy-travel-card" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇫🇷</span> 
+            <strong>Paríž</strong> (Île-de-France Mobilités) - Oficiálne info o karte Navigo Easy (pre mobilné lístky).
+        </a>
+        <a href="https://www.ratp.fr/en/titres-et-tarifs/tous-les-titres" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇫🇷</span> 
+            <strong>Paríž</strong> (RATP) - Prehľad všetkých cestovných lístkov a možností nákupu (Navigo, mobil, atď.).
+        </a>
+    </div>
+
+    <h2>🇮🇹 Taliansko</h2>
+    <div class="city-group">
+        <a href="https://www.atac.roma.it/en/tickets-and-passes" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇮🇹</span> 
+            <strong>Rím</strong> (ATAC) - Oficiálne informácie o lístkoch, kartách a online platbe.
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=it.atac.ticketing.mobile" target="_blank" class="mhd-link-btn">
+            <span class="flag-icon">🇮🇹</span> 
+            <strong>Rím</strong> - Aplikácia MyCicero / TicketAppy (mobilný nákup lístkov na MHD).
+        </a>
+    </div>
+    
+</div>
+</body>
+</html>
