@@ -16,6 +16,9 @@
             text-align: center; 
             padding-top: 80px; /* Priestor pre menu-btn */
         }
+.back-btn { display: inline-block; padding: 10px 15px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px; margin-bottom: 30px; font-weight: bold; }
+        .back-btn:hover { background-color: #c0392b; }
+
 
         /* --- Sekcia Menu (Hamburger) - IMPORTED --- */
         .menu-btn {
@@ -180,22 +183,7 @@
 </head>
 <body>
 
-<div class="menu-btn" onclick="openNav()">MENU</div>
-
-<div id="myNav" class="menu-overlay">
-    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-    
-    <div class="menu-overlay-content">
-        <a href="#basic" onclick="closeNav()">Základné</a>
-            <a href="#service" onclick="closeNav()">Servis a Údržba</a>
-            <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady</a>
-            <a href="#calculator" onclick="closeNav()">Euro Kalkulačka</a>
-            <div style="height: 50px;"></div>
-            <a href="links.html" onclick="closeNav()">Diaľnice, trajekty, vlaky</a>
-            <a href="ai_lokalizator.html">Miesta v okolí </a>
-            <a href="#ai-assistance-section" onclick="closeNav()">AI Asistent (Hľadanie)</a>
-    </div>
-</div>
+<a href="index.html" class="back-btn">← Späť na Okolie</a>
 
 <div class="container">
     <h1>🌍 AI Lokalizátor a Globálny Asistent</h1>
