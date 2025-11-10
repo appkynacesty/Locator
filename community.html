@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokátor - Komunita a Objavy</title>
+    <style>
+        /* --- Importované CSS Štýly --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* TLAČIDLO SPÄŤ */
+        .back-btn { 
+            display: inline-block; 
+            padding: 10px 15px; 
+            background-color: #e74c3c; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            margin-bottom: 30px; 
+            font-weight: bold; 
+        }        
+        .back-btn:hover { 
+            background-color: #c0392b; 
+        }
+
+        .container {
+            max-width: 900px; 
+            margin: 20px auto; 
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Štýl pre akčné tlačidlá */
+        .action-link {
+            display: block;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Odkaz na skupinu */
+        .group-link {
+            background-color: #3b5998; /* Facebook modrá */
+            color: white;
+        }
+
+        .group-link:hover {
+            background-color: #2d4373;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Odkaz pre vytvorenie postu */
+        .post-link {
+            background-color: #25d366; /* Zelená pre akciu */
+            color: white;
+        }
+
+        .post-link:hover {
+            background-color: #1eab53;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div style="padding-top: 20px; text-align: left; max-width: 900px; margin: 0 auto; padding-left: 20px;">
+    <a href="index.html" class="back-btn">← Späť na Okolie</a>
+</div>
+
+<div class="container">
+    <h1>📸 Čo ste objavili? Pochváľte sa!</h1>
+    
+    <p style="font-size: 1.1em; margin-bottom: 30px; line-height: 1.5;">
+        Podarilo sa vám nájsť skvelú reštauráciu, opustený hrad, alebo krásnu vyhliadku? 
+        Podeľte sa o váš objav s komunitou cestovateľov.
+    </p>
+
+    <a href="https://www.facebook.com/groups/1234567890/post/create/?prefill_text=Ahojte!%20Cez%20aplikáciu%20Lokátor%20som%20objavil(a)%20toto%20skvelé%20miesto:%20[Sem%20napíšte%20názov%20a%20miesto]%20%0A%0A[Pridajte%20fotku%20a%20popis!]" 
+       target="_blank" class="action-link post-link">
+       Vytvoriť nový objav a post (Odporúčané!)
+    </a>
+
+    <p style="margin-top: 40px;">Ak nie ste členom, alebo si chcete skupinu najprv prezrieť:</p>
+
+    <a href="https://www.facebook.com/groups/VasNazovSkupiny/" 
+       target="_blank" class="action-link group-link">
+       Vstúpiť do Facebook komunity Lokátor
+    </a>
+    
+    <p style="margin-top: 50px; font-size: 0.9em; color: #7f8c8d;">
+        *Poznámka: Pri kliknutí na "Vytvoriť nový objav" sa otvorí Facebook s predvyplneným textom. 
+        Obrázok a ďalší text musíte pridať priamo na Facebooku.
+    </p>
+</div>
+
+</body>
+</html>
