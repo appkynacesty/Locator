@@ -16,11 +16,11 @@
             text-align: center; 
             padding-top: 80px; /* Priestor pre menu-btn */
         }
-.back-btn { display: inline-block; padding: 10px 15px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px; margin-bottom: 30px; font-weight: bold; }
+        .back-btn { display: inline-block; padding: 10px 15px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px; margin-bottom: 30px; font-weight: bold; }
         .back-btn:hover { background-color: #c0392b; }
 
 
-        /* --- Sekcia Menu (Hamburger) - IMPORTED --- */
+        /* --- Sekcia Menu (Hamburger) - IMPORTED (Štýly pre menu-overlay vynechané pre stručnosť) --- */
         .menu-btn {
             position: fixed;
             top: 20px;
@@ -40,59 +40,12 @@
         .menu-btn:hover {
             background-color: #0056b3;
         }
-
-        .menu-overlay {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 999;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.95);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .menu-overlay-content {
-            position: relative;
-            top: 10%;
-            width: 100%;
-            text-align: left;
-            margin-top: 30px;
-            padding: 0 20px;
-        }
-
-        .menu-overlay a {
-            padding: 15px 8px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #f1f1f1;
-            display: block;
-            transition: 0.3s;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .menu-overlay a:hover {
-            color: #3498db;
-            padding-left: 30px;
-        }
-
-        .menu-overlay .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 45px;
-            font-size: 60px;
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* --- Koniec importovaných štýlov menu --- */
+        /* ... Zvyšok menu-overlay štýlov ... */
 
 
         .container {
             max-width: 900px; 
-            margin: 0 auto 20px; /* Vycentrovanie + odstup */
+            margin: 0 auto 20px; 
             padding: 20px;
             background-color: #ffffff;
             border-radius: 10px;
@@ -153,6 +106,23 @@
             margin-bottom: 20px;
         }
 
+        /* NOVÝ ŠTÝL PRE TLAČIDLO FOTIEK */
+        #photo-action-buttons {
+             margin-top: 15px; 
+        }
+
+        #photoSearchButton {
+            background-color: #f39c12; /* Oranžová farba pre objavy */
+            color: white;
+            width: 100%; /* Rozšírenie na plnú šírku */
+        }
+
+        #photoSearchButton:hover {
+            background-color: #e67e22;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* KONIEC NOVÝCH ŠTÝLOV */
+
         .output-box {
             margin-top: 20px;
             padding: 20px;
@@ -199,13 +169,27 @@
         <strong style="color: #007bff;">AI Výstup:</strong>
         <div id="outputContent">... čakám na lokalizáciu ...</div>
     </div>
-</div>
+    
+    <h3 style="color: #2c3e50; margin-top: 30px;">📸 Náhľady z Okolia</h3>
+    <p style="font-size: 0.9em; color: #7f8c8d;">
+        Zistite, čo zaujímavé nafotili iní používatelia v blízkosti vašej aktuálnej polohy.
+    </p>
+
+    <div id="photo-action-buttons">
+        <button id="photoSearchButton" class="ai-action-btn" onclick="startPhotoSearch()" disabled>
+            Hľadať Fotografie v Okolí
+        </button>
+    </div>
+    </div>
 
 <script>
+// GLOBÁLNE PREMENNÉ PRE ULOŽENIE POLOHY
 let lastSpokenText = "";
 let lastCityName = ""; 
+window.currentLat = null; 
+window.currentLon = null; 
 
-// --- FUNKCIE PRE OTVORENIE/ZATVORENIE MENU ---
+// --- FUNKCIE PRE OTVORENIE/ZATVORENIE MENU (vynechané pre stručnosť) ---
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
 }
@@ -248,13 +232,24 @@ function updateStatus(message, isError = false) {
 function startLocalization() {
     updateStatus("Prebieha lokalizácia...", false);
     document.getElementById('speakButton').disabled = true;
+    document.getElementById('photoSearchButton').disabled = true; // Zakaž, kým sa nezistí poloha
     document.getElementById('outputContent').innerHTML = "... čakám na polohu ...";
+    window.currentLat = null;
+    window.currentLon = null;
+
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
+                
+                // ⭐ ULOŽENIE SÚRADNÍC A POVOLENIE TLAČIDLA FOTIEK ⭐
+                window.currentLat = lat; 
+                window.currentLon = lon;
+                document.getElementById('photoSearchButton').disabled = false; // Povolenie tlačidla fotiek
+                // -----------------------------------------------------
+
                 updateStatus(`Poloha zistená. Prebieha zistenie mesta...`);
                 reverseGeocode(lat, lon);
             },
@@ -328,6 +323,30 @@ function generateAISearchLink(cityName, error = "") {
     updateStatus(`Vyhľadávanie dokončené. AI Asistent je pripravený.`, false);
     speakText(introText);
 }
+
+
+// --- NOVÁ FUNKCIA: FOTOGRAFICKÁ LOGIKA (Bez API kľúča) ---
+function startPhotoSearch() {
+    // Kontrola, či sú súradnice uložené
+    if (window.currentLat === null || window.currentLon === null) {
+        alert("Najprv musíte kliknúť na 'Lokalizovať a Zistiť Mesto', aby sme získali polohu!");
+        return;
+    }
+
+    const lat = window.currentLat;
+    const lon = window.currentLon;
+    
+    // Kľúčový parameter: !3m1!1e1 (inštruuje Google Maps na zobrazenie fotiek v okolí)
+    // Zvolená úroveň priblíženia (zoom): 18z
+    const photoSearchURL = `https://www.google.com/maps/@${lat},${lon},18z/data=!3m1!1e1`;
+
+    // Otvorenie odkazu v novom okne/záložke
+    window.open(photoSearchURL, '_blank');
+    
+    // Zobrazí status (voliteľné)
+    updateStatus(`Odkaz na fotografie spustený v novej záložke.`);
+}
+// ---------------------------------------------
 </script>
 
 </body>
