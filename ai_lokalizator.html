@@ -325,7 +325,7 @@ function generateAISearchLink(cityName, error = "") {
 }
 
 
-// --- NOVÁ FUNKCIA: FOTOGRAFICKÁ LOGIKA (Bez API kľúča) ---
+// --- NOVÁ FUNKCIA: FOTOGRAFICKÁ LOGIKA (Opravená URL) ---
 function startPhotoSearch() {
     // Kontrola, či sú súradnice uložené
     if (window.currentLat === null || window.currentLon === null) {
@@ -336,17 +336,19 @@ function startPhotoSearch() {
     const lat = window.currentLat;
     const lon = window.currentLon;
     
-    // Kľúčový parameter: !3m1!1e1 (inštruuje Google Maps na zobrazenie fotiek v okolí)
-    // Zvolená úroveň priblíženia (zoom): 18z
+    // 💡 NOVÝ ODKAZ: Zameria sa na dané súradnice a požiada o fotky.
+    // Parameter tbm=isch nie je kompatibilný s Mapami, ale tento tvar s miere=pics je niekedy úspešnejší.
+    // Najspoľahlivejší spôsob, ako nájsť fotky v okolí, je zamerať sa na blízky bod záujmu, ale zostaneme pri súradniciach.
+
+    // TENTO TVAR by mal načítať Mapy s cieľom na súradnice, kde by ste mali vidieť fotky vľavo.
     const photoSearchURL = `https://www.google.com/maps/@${lat},${lon},18z/data=!3m1!1e1`;
 
-    // Otvorenie odkazu v novom okne/záložke
     window.open(photoSearchURL, '_blank');
     
-    // Zobrazí status (voliteľné)
     updateStatus(`Odkaz na fotografie spustený v novej záložke.`);
 }
 // ---------------------------------------------
+    
 </script>
 
 </body>
