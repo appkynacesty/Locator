@@ -5,123 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobilný Internet pre Turistov - Prehľad</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 1000px; margin: auto; }
-        h1, h2 { color: #2c3e50; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #3498db; color: white; text-transform: uppercase; font-size: 0.9em; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        .poznámka { font-style: italic; color: #7f8c8d; font-size: 0.9em; }
+        /* --- Základné štýly --- */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; overflow-x: hidden; text-align: center; padding-top: 20px; }
+        .container { max-width: 900px; margin: 0 auto 50px; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: left; }
+        h1 { color: #2c3e50; margin-bottom: 10px; text-align: center; }
+        h2 { color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-top: 40px; margin-bottom: 20px; }
+        p.intro { text-align: center; margin-bottom: 30px; color: #7f8c8d; }
+
+        /* --- TLAČIDLO SPÄŤ (Konzistentné s inými podstránkami) --- */
+        .back-btn { display: inline-block; padding: 10px 15px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px; margin-bottom: 30px; font-weight: bold; }
+        .back-btn:hover { background-color: #c0392b; }
+        
+        /* --- ŠTÝLY PRE TABUĽKU --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ecf0f1;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        th {
+            background-color: #34495e; /* Tmavá hlavička */
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* --- ŠTÝLY PRE ODKAZY V TABUĽKE --- */
+        td a {
+            color: #2980b9; /* Modrá farba pre odkazy */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+            /* Ak je v bunke viac odkazov, zabezpečíme ich oddelenie */
+            margin-right: 8px;
+            white-space: nowrap; 
+        }
+
+        td a:hover {
+            color: #1e8449; /* Zelená farba pri hoveri */
+            text-decoration: underline;
+        }
+
+        .data {
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .note-box {
+            background-color: #fcf8e3;
+            border-left: 5px solid #f0ad4e;
+            padding: 15px;
+            margin-top: 20px;
+            color: #8a6d3b;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Mobilný Internet pre Turistov</h1>
-    <p>Prehľad najlepších možností pripojenia k internetu počas cestovania v rôznych krajinách. V rámci EÚ platí, že môžete využívať domáci roaming. Mimo EÚ je nutné hľadať alternatívy.</p>
+<div class="container">
+    <a href="index.html" class="back-btn">← Hlavná stránka</a>
 
-    <h2>1. Lokálne Predplatené (Fyzické) SIM Karty</h2>
-    <p>Tieto karty kúpite priamo v cieľovej krajine. Vyžadujú registráciu (pas/ID) a často ponúkajú najviac dát za najlepšiu cenu.</p>
+    <h1>📶 Mobilný Internet a SIM Karty pre Turistov</h1>
+    <p class="intro">
+        Prehľad najlepších možností pripojenia k internetu počas cestovania v rôznych krajinách. V rámci EÚ platí, že môžete využívať domáci roaming. Mimo EÚ je nutné hľadať alternatívy.
+    </p>
+
+    <h2>🇪🇺 Lokálne Predplatené (Fyzické) SIM Karty</h2>
+    <p>
+        Tieto SIM karty kúpite priamo na mieste (letisko, predajne operátorov) po predložení pasu/OP. Sú ideálne pre dlhšie pobyty a staršie telefóny.
+    </p>
+    
     <table>
         <thead>
             <tr>
                 <th>Krajina</th>
-                <th>Operátor</th>
-                <th>Názov/Typ karty</th>
-                <th>Cena / Dáta (Priemerná)</th>
+                <th>Operátor/Produkt</th>
+                <th>Dáta/Platnosť (Typ. Ponuka)</th>
                 <th>Poznámka</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Taliansko</strong></td>
-                <td>TIM, Vodafone IT, WindTre</td>
-                <td>Predplatená pre turistov</td>
-                <td>Od 20 € / 50-100 GB (30 dní)</td>
-                <td>Vyžaduje pas/ID. Dostupné v obchodoch operátorov alebo na letiskách.</td>
+                <td>**Rakúsko**</td>
+                <td>
+                    <a href="https://www.a1.net/" target="_blank">A1</a>, 
+                    <a href="https://www.magenta.at/" target="_blank">Magenta</a>, 
+                    <a href="https://www.drei.at/" target="_blank">Drei</a>
+                </td>
+                <td class="data">Balíčky od 5 GB / 30 dní</td>
+                <td>Vyžaduje sa registrácia (platný doklad). Dobré pokrytie v celej krajine.</td>
             </tr>
             <tr>
-                <td><strong>Grécko</strong></td>
-                <td>Cosmote, Vodafone GR, Wind Hellas</td>
-                <td>Predplatená pre turistov</td>
-                <td>Od 15 € / 20-40 GB (30 dní)</td>
-                <td>Vyžaduje pas/ID. Dobré pokrytie v turistických oblastiach.</td>
+                <td>**Maďarsko**</td>
+                <td>
+                    <a href="https://www.vodafone.hu/" target="_blank">Vodafone</a>, 
+                    <a href="https://www.telekom.hu/" target="_blank">Telekom</a>
+                </td>
+                <td class="data">Balíčky od 4 GB / 30 dní</td>
+                <td>Dostupné na letisku a vo veľkých predajniach. Hľadajte balíky "Tourist SIM".</td>
             </tr>
             <tr>
-                <td><strong>Francúzsko</strong></td>
-                <td>Orange, SFR, Bouygues Telecom</td>
-                <td>'Holiday' SIM / Turistický balík</td>
-                <td>Od 30 € / 10-50 GB (14/30 dní)</td>
-                <td>Vyžaduje pas/ID. Napr. Orange 'Holiday Europe' je populárna voľba.</td>
+                <td>**Chorvátsko**</td>
+                <td>
+                    <a href="https://www.t.ht.hr/" target="_blank">Hrvatski Telekom</a>, 
+                    <a href="https://www.a1.hr/" target="_blank">A1 Hrvatska</a>
+                </td>
+                <td class="data">Turistické SIM s 10-20 GB / 7-10 dní</td>
+                <td>Veľmi obľúbené balíky priamo na letiskách. Často sú s volaním/SMS.</td>
             </tr>
             <tr>
-                <td><strong>Španielsko</strong></td>
-                <td>Orange ES, Vodafone ES, Movistar</td>
-                <td>'Tourist' SIM / Predplatená</td>
-                <td>Od 15 € / 30-60 GB (30 dní)</td>
-                <td>Vyžaduje pas/ID. Jednoduchá kúpa na letiskách.</td>
+                <td>**Taliansko**</td>
+                <td>
+                    <a href="https://www.tim.it/" target="_blank">TIM</a>, 
+                    <a href="https://www.vodafone.it/" target="_blank">Vodafone IT</a>, 
+                    <a href="https://www.windtre.it/" target="_blank">WindTre</a>
+                </td>
+                <td class="data">Od 20 € / 50-100 GB (30 dní)</td>
+                <td>Vyžaduje pas/ID. Dostupné v obchodoch operátorov.</td>
             </tr>
             <tr>
-                <td><strong>Čierna Hora</strong></td>
-                <td>Telenor, Crnogorski Telekom, m:tel</td>
-                <td>Turistický balík (Prepaid)</td>
-                <td>Od 10 € / Neobmedzené (7-15 dní)</td>
-                <td>Vyžaduje pas/ID. **Pozor:** Krajina je mimo EÚ roamingovej zóny!</td>
+                <td>**Grécko**</td>
+                <td>
+                    <a href="https://www.cosmote.gr/" target="_blank">Cosmote</a>, 
+                    <a href="https://www.vodafone.gr/" target="_blank">Vodafone GR</a>
+                </td>
+                <td class="data">Od 15 € / 20-40 GB (30 dní)</td>
+                <td>Dobré pokrytie v turistických oblastiach.</td>
+            </tr>
+            <tr>
+                <td>**Francúzsko**</td>
+                <td>
+                    <a href="https://www.orange.fr/" target="_blank">Orange</a>, 
+                    <a href="https://www.sfr.fr/" target="_blank">SFR</a>, 
+                    <a href="https://www.bouyguestelecom.fr/" target="_blank">Bouygues</a>
+                </td>
+                <td class="data">Od 30 € / 10-50 GB (14/30 dní)</td>
+                <td>Orange 'Holiday' SIM je populárna.</td>
+            </tr>
+            <tr>
+                <td>**Španielsko**</td>
+                <td>
+                    <a href="https://www.orange.es/" target="_blank">Orange ES</a>, 
+                    <a href="https://www.vodafone.es/" target="_blank">Vodafone ES</a>, 
+                    <a href="https://www.movistar.es/" target="_blank">Movistar</a>
+                </td>
+                <td class="data">Od 15 € / 30-60 GB (30 dní)</td>
+                <td>Jednoduchá kúpa na letiskách a vo veľkých obchodoch.</td>
+            </tr>
+            <tr>
+                <td>**Čierna Hora**</td>
+                <td>
+                    <a href="https://www.mtel.me/" target="_blank">m:tel</a>, 
+                    <a href="https://www.telekom.me/" target="_blank">Telekom.me</a>
+                </td>
+                <td class="data">Od 10 € / Neobmedzené (7-15 dní)</td>
+                <td>**Pozor:** Krajina je mimo EÚ roamingovej zóny!</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>2. eSIM (Digitálne SIM karty)</h2>
-    <p>Najpohodlnejší spôsob. Kúpa a inštalácia je online, bez nutnosti meniť fyzickú SIM kartu. Ideálne pre krátkodobé pobyty a zariadenia s podporou eSIM.</p>
+    <div class="note-box">
+        **DÔLEŽITÉ:** Vo väčšine krajín musíte pri kúpe SIM karty predložiť platný **cestovný pas alebo občiansky preukaz** kvôli registrácii.
+    </div>
+
+    <h2>📱 Globálne eSIM Riešenia (Digitálne SIM)</h2>
+    <p>
+        Najrýchlejšie a najpohodlnejšie riešenie pre moderné telefóny s podporou eSIM. Aktivujete pred odletom a pripojíte sa ihneď po pristátí.
+    </p>
+
     <table>
         <thead>
             <tr>
-                <th>Krajina</th>
-                <th>Poskytovateľ (Platforma)</th>
-                <th>Dáta / Doba</th>
-                <th>Cena (približná)</th>
-                <th>Poznámka</th>
+                <th>Služba</th>
+                <th>Pokrytie</th>
+                <th>Typické ponuky</th>
+                <th>Odkaz</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Taliansko</strong></td>
-                <td>Airalo, Yesim, Holafly</td>
-                <td>10 GB / 30 dní</td>
-                <td>18.50 €</td>
-                <td>Iba dáta, okamžitá inštalácia cez QR kód/aplikáciu.</td>
+                <td><a href="https://www.airalo.com/" target="_blank">Airalo</a></td>
+                <td>200+ krajín (aj regionálne balíčky EÚ)</td>
+                <td class="data">1 GB / 7 dní | 5 GB / 30 dní</td>
+                <td><a href="https://www.airalo.com/" target="_blank">Navštíviť Airalo</a></td>
             </tr>
             <tr>
-                <td><strong>Grécko</strong></td>
-                <td>Airalo, BetterRoaming</td>
-                <td>5 GB / 30 dní</td>
-                <td>~12 USD</td>
-                <td>Rýchla aktivácia pri pripojení do miestnej siete.</td>
+                <td><a href="https://yesim.app/sk/" target="_blank">Yesim</a></td>
+                <td>Globálne (viac ako 200 destinácií)</td>
+                <td class="data">Balíčky s dátovým limitom, ale aj "Neobmedzené" (s FUP).</td>
+                <td><a href="https://yesim.app/sk/" target="_blank">Navštíviť Yesim</a></td>
             </tr>
             <tr>
-                <td><strong>Francúzsko</strong></td>
-                <td>BetterRoaming, Airalo</td>
-                <td>10 GB / 30 dní</td>
-                <td>~24 USD</td>
-                <td>Ideálne na pokrytie Paríža a hlavných miest.</td>
+                <td><a href="https://www.holafly.com/" target="_blank">Holafly</a></td>
+                <td>Zamerané na neobmedzené dáta</td>
+                <td class="data">Neobmedzené dáta / 5, 10, 15... dní</td>
+                <td><a href="https://www.holafly.com/" target="_blank">Navštíviť Holafly</a></td>
             </tr>
             <tr>
-                <td><strong>Španielsko</strong></td>
-                <td>Airalo, Simsolo</td>
-                <td>10 GB / 30 dní</td>
-                <td>14.00 €</td>
-                <td>Dostupné aj "neobmedzené" plány (s FUP).</td>
-            </tr>
-            <tr>
-                <td><strong>Čierna Hora</strong></td>
-                <td>Airalo, TripSIM</td>
-                <td>10 GB / 7 dní</td>
-                <td>18.50 €</td>
-                <td>Skontrolujte kompatibilitu zariadenia pre eSIM v ne-EÚ krajinách.</td>
+                <td><a href="https://www.betterroaming.com/" target="_blank">BetterRoaming</a></td>
+                <td>Zamerané na jednoduché EÚ balíčky</td>
+                <td class="data">5 GB / 30 dní</td>
+                <td><a href="https://www.betterroaming.com/" target="_blank">Navštíviť BetterRoaming</a></td>
             </tr>
         </tbody>
     </table>
 
-    <p class="poznámka">Upozornenie: Ceny a ponuky sa neustále menia. Pred cestou si vždy overte aktuálne balíčky u vybraného operátora alebo eSIM poskytovateľa.</p>
+    <div class="note-box">
+        **Kompatibilita:** Pred kúpou eSIM si vždy overte, či váš smartfón podporuje technológiu eSIM. Ak nemáte eSIM, musíte zvoliť fyzickú SIM kartu.
+    </div>
+
+</div> 
 
 </body>
 </html>
