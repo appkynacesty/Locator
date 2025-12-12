@@ -1,0 +1,155 @@
+{
+  "app_name": "Karavan Asistent",
+  "version": "1.0.1",
+  "last_updated": "2025-12-12",
+  "modules": [
+    {
+      "id": "intro_warnings",
+      "title": "Úvod a dopravné info",
+      "icon": "traffic",
+      "sections": [
+        {
+          "heading": "Základné obmedzenia",
+          "content": "Tu nájdete aktuálne informácie o dopravných obmedzeniach (mýto, zákazy) a odkazy na e-známky pre vybranú krajinu."
+        }
+      ]
+    },
+    {
+      "id": "ar_leveling",
+      "title": "AR Leveling (Vyváženie)",
+      "icon": "straighten",
+      "sections": [
+        {
+          "heading": "Ako funguje AR Leveling",
+          "content": "Táto funkcia používa kameru vášho telefónu a rozšírenú realitu (AR) na vizuálne zobrazenie, aké vysoké podložky potrebujete pod kolesá, aby ste karavan vyrovnali. "
+        }
+      ]
+    },
+    {
+      "id": "travel_log",
+      "title": "Cestovateľský denník",
+      "icon": "book",
+      "sections": [
+        {
+          "heading": "Pridávanie zápisu",
+          "content": "Do denníka si môžete ukladať detaily o cestách, parkovacích miestach, tankovaní, alebo servisných úkonoch."
+        }
+      ]
+    },
+    {
+      "id": "ar_space_planning",
+      "title": "AR 3D Náhľad miesta",
+      "icon": "view_in_ar",
+      "sections": [
+        {
+          "heading": "Plánovanie státia",
+          "content": "Vizualizácia rozmerov vášho karavanu na reálnom parkovacom mieste cez kameru. Pomôže vám zistiť, či sa na miesto zmestíte a či neprekážate susedom."
+        }
+      ]
+    },
+    {
+      "id": "gps_locator",
+      "title": "Kde parkujem? (GPS Locator)",
+      "icon": "pin_drop",
+      "sections": [
+        {
+          "heading": "Navigácia po kempe",
+          "content": "Uloženie presnej GPS polohy vášho karavanu, aby ste ho ľahko našli pri návrate z prechádzky alebo z mesta."
+        }
+      ]
+    },
+    {
+      "id": "weight_calculator",
+      "title": "Kalkulačka zaťaženia",
+      "icon": "balance",
+      "sections": [
+        {
+          "heading": "Výpočet hmotnosti",
+          "content": "Zaznamenávajte váhu zásob (voda, plyn, batožina) pre kontrolu dodržania maximálnej povolenej hmotnosti karavanu (DMC)."
+        }
+      ]
+    },
+    {
+      "id": "off_grid_calculator",
+      "title": "Kalkulačka sebestačnosti",
+      "icon": "flash_on",
+      "sections": [
+        {
+          "heading": "⚡ Úvod a účel kalkulačky",
+          "content": "Kalkulačka vám pomôže odhadnúť, ako dlho vydrží váš karavan fungovať nezávisle na základe batérií, soláru, vody a plynu. Odhad je len informatívny, vychádza z priemerných hodnôt spotreby. Pre presnosť je kľúčové zadať reálny čas používania spotrebičov."
+        },
+        {
+          "heading": "🔋 Energetický systém",
+          "content": "Zadajte kapacitu batérie v Ampérhodinách (Ah) a celkový výkon Soláru (Wp). \n\n**Typ batérie:** Aktivujte 'Lítiová batéria', ak máte LiFePO4. Pre olovené/gélové batérie je využiteľná kapacita len cca 50%. \n\n**Počasie:** Zvoľte očakávané počasie. To výrazne ovplyvňuje zisk zo solárnych panelov (Jasno = 100% zisk, Zamračené = cca 10-15% zisk)."
+        },
+        {
+          "heading": "🔌 Spotrebiče (Odber energie)",
+          "content": "Vyberte spotrebiče zo zoznamu. Každý má prednastavený priemerný odber (A). Pre presný výpočet kliknite na ikonu **Edit** (ceruzka) a pomocou posuvníka zadajte, koľko hodín denne spotrebič beží. Denný odber (Ah) je súčet: Ampéry * Hodiny."
+        },
+        {
+          "heading": "💧 Voda a 🔥 Plyn",
+          "content": "**Voda:** Zadajte objem nádrže a počet osôb. Počíta sa s priemernou spotrebou 15 litrov na osobu/deň.\n\n**Plyn:** Vyberte **veľkosť fľaše** (5 kg, 10 kg, 11 kg atď.). Ak máte vlastnú nádrž, zvoľte 'Vlastná váha' a zadajte hmotnosť plynu.\n\n**Spotreba:** Aktivujte, či chladnička beží na plyn a či kúrite plynom (v zime spotreba plynu výrazne narastá)."
+        },
+        {
+          "heading": "📊 Výsledky a Bilancia",
+          "content": "Zobrazuje sa odhad výdrže v dňoch pre Elektrinu, Vodu a Plyn. Ak je solárny zisk väčší ako celkový denný odber zo spotrebičov, výdrž elektriny bude '∞' (nekonečno).\n\n**Bilancia:** Prehľad denného **Zisku** zo soláru vs. celkový denný **Odber** v Ah."
+        }
+      ]
+    },
+    {
+      "id": "emergency_help",
+      "title": "Pomoc v núdzi",
+      "icon": "help_outline",
+      "sections": [
+        {
+          "heading": "Dôležité linky",
+          "content": "Prehľad dôležitých telefónnych čísel a asistenčných služieb platných v Európe (napr. 112). "
+        }
+      ]
+    },
+    {
+      "id": "satellite_tracker",
+      "title": "Poloha satelitov",
+      "icon": "satellite",
+      "sections": [
+        {
+          "heading": "Nastavenie paraboly",
+          "content": "Pomocou rozšírenej reality nájdite v reálnom čase polohu najpoužívanejších satelitov na oblohe (napr. Astra, Hotbird), aby ste správne nastavili satelitnú parabolu."
+        }
+      ]
+    },
+    {
+      "id": "sun_path",
+      "title": "Dráha slnka (Solar)",
+      "icon": "wb_sunny",
+      "sections": [
+        {
+          "heading": "Optimalizácia parkovania",
+          "content": "V náhľade kamery zistíte, kadiaľ bude slnko prechádzať počas dňa. Ideálne pre umiestnenie solárnych panelov a vyhnutie sa dlhému tieňu."
+        }
+      ]
+    },
+    {
+      "id": "checklist",
+      "title": "Checklist pred odchodom",
+      "icon": "checklist",
+      "sections": [
+        {
+          "heading": "Kontrola vozidla",
+          "content": "Uistite sa, že ste pred odchodom nezabudli na žiadny dôležitý krok (uzavretie okien, vypnutie plynu, zabezpečenie riadu)."
+        }
+      ]
+    },
+    {
+      "id": "help_screen_guide",
+      "title": "O Návodoch",
+      "icon": "info_outline",
+      "sections": [
+        {
+          "heading": "Aktualizácia obsahu",
+          "content": "Tieto návody sú stiahnuté z internetu, čo nám umožňuje ich okamžite aktualizovať bez nutnosti sťahovania novej verzie aplikácie."
+        }
+      ]
+    }
+  ]
+}
