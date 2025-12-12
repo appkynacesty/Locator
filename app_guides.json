@@ -5,14 +5,22 @@
   "modules": [
     {
       "id": "intro_warnings",
-      "title": "Úvod a dopravné info",
-      "icon": "traffic",
-      "sections": [
-        {
-          "heading": "Základné obmedzenia",
-          "content": "Tu nájdete aktuálne informácie o dopravných obmedzeniach (mýto, zákazy) a odkazy na e-známky pre vybranú krajinu."
-        }
-      ]
+  "title": "Úvod a dopravné info",
+  "icon": "traffic",
+  "sections": [
+    {
+      "heading": "AKO FUNGUJE ZISTENIE POLOHY",
+      "content": "Táto obrazovka automaticky načíta OBMEZENIA a RYCHLOSTNÉ LIMITY pre krajinu, v ktorej sa práve nachádzate, pomocou GPS. Načítavajú sa dáta z externého dátového zdroja (JSON). DÁTA SÚ VŽDY LEN INFORMATÍVNE a pred jazdou je NUTNÉ overiť si lokálne predpisy. \n\nAk sa nepodarí zistiť polohu (napríklad ZLYHANIE GPS), zobrazí sa vám manuálny výber krajiny na vrchole obrazovky."
+    },
+    {
+      "heading": "PREPÍNAČ HMOTNOSTI (≤ 3.5t / > 3.5t)",
+      "content": "Pre správne zobrazenie RÝCHLOSTNÝCH LIMTOV a odkazov na MÝTO/ZNÁMKY je kľúčové nastaviť správnu hmotnostnú kategóriu vášho karavanu. Prepínače sa nachádzajú v strede obrazovky pod názvom krajiny. Zmena kategórie AUTOMATICKY mení zobrazené limity a odkaz na e-známku. \n\nAk máte PRÍVES, vždy používajte kategóriu s celkovou SÚPRAVOU hmotnosťou (motorové vozidlo + príves)."
+    },
+    {
+      "heading": "RYCHLOSŤ, ZNÁMKY A UPOZORNENIA",
+      "content": "RÝCHLOSTNÉ LIMITY: Zobrazená tabuľka ukazuje limity pre kategóriu, ktorú ste vybrali (Mimo obce, Rýchlostná cesta, Diaľnica).\n\nE-ZNÁMKY A MÝTO: V sekcii E-ZNÁMKY sa nachádza manuálny ROZKLIKÁVACÍ ZOZNAM s krajinami, pre ktoré máme oficiálne odkazy na nákup diaľničných známok. Prekliknutie na stránku sa realizuje cez tlačidlo OTVORIŤ ODKAZ.\n\nVAROVANIA: V spodnej časti sú zobrazené dôležité INFORMÁCIE alebo ZÁKAZY špecifické pre danú krajinu (napr. zákaz spania na parkoviskách, špeciálne pravidlá pre plyn)."
+    }
+  ]
     },
     {
       "id": "ar_leveling",
