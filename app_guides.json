@@ -93,30 +93,34 @@
     },
     {
       "id": "gps_locator",
-      "title": "GPS Lokátor a Parkovisko",
-      "icon": "gps_fixed",
-      "sections": [
-        {
-          "heading": "O FUNKCII GPS LOKÁTOR",
-          "content": "Táto funkcia slúži ako osobný navigačný asistent, ktorý vám pomôže vrátiť sa k zaparkovanému karavanu po pešej túre, prechádzke mestom alebo výlete. Umožňuje uložiť presnú GPS polohu karavanu a následne vás k nej naviguje pomocou vzdialenosti a vizuálneho kompasu."
-        },
-        {
-          "heading": "AKO POUŽÍVAŤ",
-          "content": "* Zaparkujte: Zapnite túto obrazovku a uistite sa, že ste získali svoju aktuálnu polohu (zelená ikona). Ak je poloha presná (nízka hodnota 'Presnosť'), stlačte 'ULOŽIŤ AKTUÁLNU'.\n* Uloženie: Zadajte názov (napr. Kemp Stará Voda, Parkovisko pod lesom). Táto poloha sa uloží do pamäte telefónu (nie do cloudu).\n* Návrat: Počas pešej túry aplikácia neustále sleduje vašu polohu a v reálnom čase aktualizuje VZDIALENOSŤ a SMER k uloženému karavanu. Orientujte sa pomocou strelky kompasu."
-        },
-        {
-          "heading": "KOMPAS A NAVIGÁCIA ",
-          "content": "Sekcia Navigácia zobrazuje dve kľúčové informácie:\n\n1. VZDIALENOSŤ: Presná vzdialenosť (v metroch alebo kilometroch) k uloženému cieľu.\n2. STRELKA (KOMPAS): Dynamická strelka, ktorá ukazuje priamo k uloženému miestu. Je kalibrovaná podľa smeru, kam je namierený váš telefón (HEADING), a smeru k cieľu (BEARING). AK SA STRELKA NACHÁDZA HORE (ORIENTOVANÁ AKO 'NORTH'), KRÁČATE SPRÁVNYM SMEROM K CIEĽU."
-        },
-        {
-          "heading": "KĽÚČOVÉ GPS DÁTA",
-          "content": "* Aktuálna Poloha: Získavaná v reálnom čase pomocou GPS streamu. Dôležitý údaj je PRESNOSŤ (v metroch), ktorá by mala byť pre uloženie čo najnižšia (ideálne pod 10 m).\n* Uložené Miesto: Súradnice (Latitude a Longitude) miesta, ktoré ste označili ako 'Parkovisko'."
-        },
-        {
-          "heading": "RIEŠENIE PROBLÉMOV",
-          "content": "* Poloha nie je dostupná: Uistite sa, že máte v telefóne povolené SLUŽBY POLOHY (GPS) a v nastaveniach aplikácie sú udelené OPRÁVNENIA NA POLOHU.\n* Kompas sa neotáča: Váš telefón nemusí mať zabudovaný magnetický senzor (kompas), alebo je potrebné reštartovať aplikáciu. Ak to nepomôže, navigujte sa iba podľa číselnej hodnoty vzdialenosti."
-        }
-      ]
+  "title": "GPS Lokátor a Parkovisko",
+  "icon": "gps_fixed",
+  "sections": [
+    {
+      "heading": "O FUNKCII GPS LOKÁTOR",
+      "content": "Táto funkcia slúži ako OSOBNÝ NAVIGAČNÝ ASISTENT, ktorý vám pomôže vrátiť sa k uloženému miestu (karavan, kempingové miesto, auto) po pešej túre alebo prechádzke. Umožňuje uložiť až ŠTYRI PRESNÉ GPS POLOHY a následne vás k nim naviguje pomocou VZDIALENOSTI a VIZUÁLNEHO KOMPASU."
+    },
+    {
+      "heading": "ŠTRUKTÚRA OBRAZOVKY",
+      "content": "Obrazovka je rozdelená do troch hlavných sekcií:\n\n1. **STAV GPS A CIEĽ:** Ukazuje, či máte AKTÍVNU GPS POLOHU a kam práve navigujete.\n2. **SLOTY PRE MIESTA:** Štyri interaktívne okná, kde môžete polohy UKLADAŤ, MAZAŤ a VYBERAŤ ako cieľ navigácie.\n3. **KOMPAS NAVIGÁCIA:** Vizualizácia SMERU a VZDIALENOSTI k vybranému cieľu."
+    },
+    {
+      "heading": "AKO ULOŽIŤ CIEĽ (Sloty)",
+      "content": "Sloty na uloženie miest (Môj Karavan, Burger, atď.) slúžia na uloženie a rýchly výber cieľa. \n\n**ULOŽENIE (alebo AKTUALIZÁCIA) POLOHY:**\n1. Uistite sa, že máte **AKTÍVNU GPS POLOHU** (zelený stav v hornej karte).\n2. Ak je poloha presná, stlačte tlačidlo **IKONA ULOŽIŤ/EDITOVAŤ (DISKETA/CERUZKA)** pri zvolenom slote. \n3. Zadajte NÁZOV MIESTA a potvrďte. Poloha sa uloží a automaticky sa nastaví ako cieľ pre navigáciu.\n\n**NAVIGÁCIA K ULOŽENÉMU CIEĽU:**\n* Jednoducho **KLIKNITE kamkoľvek na kartu slotu** (s výnimkou tlačidiel Uložiť/Zmazať). Vybraný cieľ sa ihneď zobrazí v karte **NAVIGUJEM DO:**."
+    },
+    {
+      "heading": "GPS STAV A OBNOVENIE POLOHY",
+      "content": "Hneď v hornej časti obrazovky sa nachádza karta so stavom GPS.\n\n* **STATUS:** Indikuje, či je poloha k dispozícii a aká je jej PRESNOSŤ (v metroch). Pre presné uloženie by mala byť hodnota 'Presnosť' čo NAJNIŽŠIA (ideálne pod 10 metrov).\n* **OBNOVIŤ:** Ak chcete nanovo zistiť aktuálnu GPS polohu alebo ak status ukazuje chybu, stlačte **IKONU OBNOVENIA (ŠIPKA V KRUHU)** v pravom hornom rohu karty."
+    },
+    {
+      "heading": "KOMPAS A NAVIGÁCIA",
+      "content": "Sekcia 'Kompas Navigácia' zobrazuje informácie pre váš návrat k vybranému cieľu:\n\n1. **VZDIALENOSŤ:** Presná vzdialenosť (v metroch alebo kilometroch) k uloženému cieľu.\n2. **STRELKA (KOMPAS):** Dynamická ikona šípky. Strelka ukazuje priamo k uloženému miestu.\n\n**AKO JU POUŽIŤ:** Otáčajte telefónom, kým sa **STRELKA NEOTOČÍ NA HORNÚ ČASŤ OBRAZOVKY (AKO 'SEVER')**. Keď strelka ukazuje nahor, KRÁČATE SPRÁVNYM SMEROM K CIEĽU."
+    },
+    {
+      "heading": "RIEŠENIE PROBLÉMOV",
+      "content": "* **Poloha nie je dostupná:** Stlačte **IKONU OBNOVIŤ (REFRESH)**. Uistite sa, že máte v telefóne povolené **SLUŽBY POLOHY (GPS)** a v nastaveniach aplikácie sú udelené **OPRÁVNENIA NA POLOHU**.\n* **Kompas sa neotáča:** Váš telefón nemusí mať ZABUDOVANÝ MAGNETICKÝ SENZOR (kompas), alebo je potrebné REŠTARTOVAŤ APLIKÁCIU. Ak to nepomôže, navigujte sa IBA podľa číselnej hodnoty VZDIALENOSTI."
+    }
+  ]
     },
     {
       "id": "weight_calculator",
