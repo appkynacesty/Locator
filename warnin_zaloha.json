@@ -1,0 +1,604 @@
+{
+  "AT": [
+    {
+      "id": 1,
+      "typ": "Hlavný Zákaz: Nocovanie",
+      "text": "V Rakúsku je vo väčšine spolkových krajín zakázané 'divoké kempovanie' (nocovanie/státie na súkromných a verejných parkoviskách/cestách za účelom prenocovania). Hrozia vysoké pokuty (až do 500 €).",
+      "ikona": "🚫"
+    },
+    {
+      "id": 2,
+      "typ": "Dôležité: Vesty a Lekárnička",
+      "text": "Povinné reflexné vesty pre všetky osoby v karavane (prístupné z kabíny), a súprava prvej pomoci musí byť vo vozidle.",
+      "ikona": "🚨"
+    }
+  ],
+  "DE": [
+    {
+      "id": 1,
+      "typ": "Krátkodobé Státie: Možné",
+      "text": "V Nemecku je povolené 'obnovenie schopnosti riadiť' (jedna noc) na parkoviskách a odpočívadlách, pokiaľ to nie je explicitne zakázané značkou. Kempingové správanie (vyťahovanie stola, markízy) je zakázané.",
+      "ikona": "🅿️"
+    },
+    {
+      "id": 2,
+      "typ": "Dôležité: Ekologické Zóny",
+      "text": "Mnoho nemeckých miest vyžaduje tzv. 'Umweltplakette' (ekologická nálepka) pre vstup do nízkoemisných zón. Kontrola karavanu pred cestou je kľúčová.",
+      "ikona": "🌿"
+    }
+  ],
+  "FR": [
+    {
+      "id": 1,
+      "typ": "Pravidlá: Rôzne pre Oblasti",
+      "text": "Pravidlá sa líšia podľa obce a regiónu. Na súkromných cestách je 'bivakovanie' povolené so súhlasom majiteľa. Sledujte miestne značenie a 'Arrêté Municipal' (obecné vyhlášky).",
+      "ikona": "📜"
+    },
+    {
+      "id": 2,
+      "typ": "Dôležité: Alkohol a Rýchlosť",
+      "text": "Ak hmotnosť presahuje 3,5t, sú obmedzenia na rýchlosť a vyžaduje sa dýchací prístroj vo vozidle (hoci pokuty za jeho absenciu boli zrušené, pre istotu je odporúčaný).",
+      "ikona": "⚠️"
+    }
+  ],
+  "SK": [
+    {
+      "id": 1,
+      "typ": "Zákaz: Mimo Kempy",
+      "text": "Na Slovensku je prísny zákaz 'divokého kempovania' a nocovania karavanov vo voľnej prírode, na parkoviskách a pri vodných plochách (ak to nie je povolené). Vyhýbajte sa chráneným oblastiam.",
+      "ikona": "🚫"
+    }
+  ],
+  "CH": [
+    {
+      "id": 1,
+      "typ": "Hlavný Zákaz: Kantonálne Rozdiely",
+      "text": "Pravidlá sa líšia podľa kantónov. Vo všeobecnosti je divoké kempovanie a nocovanie prísne zakázané. Na súkromných pozemkoch len s povolením. Používajte oficiálne miesta.",
+      "ikona": "🇨🇭"
+    }
+  ],
+  "IT": [
+    {
+      "id": 1,
+      "typ": "Pravidlá: Autogrill a Obce",
+      "text": "Pre nocovanie na diaľničných odpočívadlách (Autogrill) a verejných parkoviskách platia miestne obmedzenia. V historických centrách a turistických oblastiach je zákaz prísny.",
+      "ikona": "⛔"
+    }
+  ],
+  
+  "PL": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Zakázané",
+      "text": "Divoké kempovanie a nocovanie na verejných parkoviskách je vo všeobecnosti zakázané. Pokiaľ nie je vyznačené 'Parkovisko pre karavany' alebo ide o súkromný pozemok so súhlasom.",
+      "ikona": "🚫"
+    },
+    {
+      "id": 2,
+      "typ": "Vjazdy do miest: Zákaz",
+      "text": "V mnohých poľských mestách sú zavedené zóny s obmedzením vjazdu (typicky pre ťažké vozidlá, ale aj pre karavany) kvôli hustote dopravy.",
+      "ikona": "⚠️"
+    }
+  ],
+  "FI": [
+    {
+      "id": 1,
+      "typ": "Pravidlo 'Everyman's Right': Povolené",
+      "text": "Využívanie 'Everyman's Right' povoľuje krátkodobé nocovanie (bivakovanie) na nezastavaných pozemkoch, ktoré nie sú blízko obydlí. Vyhýbajte sa chráneným oblastiam a súkromným záhradám.",
+      "ikona": "🌲"
+    }
+  ],
+  "SE": [
+    {
+      "id": 1,
+      "typ": "Pravidlo 'Allemansrätten': Povolené",
+      "text": "Divoké kempovanie je povolené (vrátane karavanov) na 24 hodín mimo súkromného pozemku a chránenej oblasti. Nesmie sa však 'kempovať' (iba stáť).",
+      "ikona": "🏕️"
+    }
+  ],
+  "DK": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Prísny Zákaz",
+      "text": "V Dánsku je divoké kempovanie a nocovanie karavanov mimo oficiálnych miest alebo súkromných pozemkov s povolením prísne zakázané. Hrozia vysoké pokuty.",
+      "ikona": "🚫"
+    }
+  ],
+  "NL": [
+    {
+      "id": 1,
+      "typ": "Wildparken: Prísne Kontrolované",
+      "text": "Divoké kempovanie je zakázané. Krátkodobé státie na parkovisku za účelom odpočinku je tolerované, pokiaľ neprejavujete kempingové správanie. Sledujte miestne zákazy.",
+      "ikona": "⛔"
+    }
+  ],
+  "BE": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Zákaz",
+      "text": "V Belgicku je nocovanie mimo oficiálnych kempov zakázané. V niektorých obciach je tolerované jedno prenocovanie na verejných parkoviskách, ak to nie je zakázané značkou.",
+      "ikona": "🚫"
+    }
+  ],
+  "ES": [
+    {
+      "id": 1,
+      "typ": "Rozdiel medzi státím a kempovaním",
+      "text": "Španielsko robí prísny rozdiel medzi 'státím' (povolené) a 'kempovaním' (zakázané). Ak vyťahujete stôl, markízu, alebo používate podpery, je to kempovanie a je to zakázané.",
+      "ikona": "🅿️"
+    },
+    {
+      "id": 2,
+      "typ": "Pravidlá regiónov",
+      "text": "Pravidlá sa líšia podľa autonómnych spoločenstiev (regiónov). V pobrežných a chránených zónach je zákaz prísny. Kontrolujte miestne vyhlášky (Ordenanza Municipal).",
+      "ikona": "📜"
+    }
+  ],
+  "SLO": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Prísny Zákaz",
+      "text": "V Slovinsku je divoké kempovanie, vrátane nocovania v karavanoch na parkoviskách a vo voľnej prírode, prísne zakázané (až 500 € pokuta).",
+      "ikona": "🚫"
+    }
+  ],
+  "HU": [
+    {
+      "id": 1,
+      "typ": "Nocovanie mimo kempov: Zákaz",
+      "text": "Nocovanie vo voľnej prírode a na parkoviskách je nelegálne, pokiaľ to nie je špeciálne určené 'Stellplatz'.",
+      "ikona": "⛔"
+    }
+  ],
+  "HR": [
+    {
+      "id": 1,
+      "typ": "Wildcamping: Prísny Zákaz",
+      "text": "Chorvátsko má jeden z najprísnejších zákazov divokého kempovania. Zákaz platí aj pre karavany a najmä v blízkosti pobrežia a národných parkov. Vyhnite sa pokutám až do 3000 HRK.",
+      "ikona": "🚫"
+    }
+  ],
+  "GR": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Nelegálne",
+      "text": "Oficiálne je divoké kempovanie zakázané a môžu hroziť vysoké pokuty, avšak v odľahlejších oblastiach mimo sezóny sa toleruje, ak si nevytiahnete kempingové vybavenie (stoličky, markízu).",
+      "ikona": "⚠️"
+    }
+  ],
+  "SRB": [
+    {
+      "id": 1,
+      "typ": "Mimo kempov: Zákaz",
+      "text": "Nocovanie vo voľnej prírode je zakázané. Používajte oficiálne kempy alebo miesta určené pre kemping. V mestách je nocovanie na verejných parkoviskách obmedzené.",
+      "ikona": "🚫"
+    }
+  ],
+  "BiH": [
+    {
+      "id": 1,
+      "typ": "Mimo kempov: Riziko/Zákaz",
+      "text": "Oficiálne je divoké kempovanie zakázané. Zvláštnu opatrnosť venujte oblasti, kde ešte môžu byť nevyčistené míny (hlavne vzdialené, neobrábané polia a lesy z vojnových čias).",
+      "ikona": "💣"
+    }
+  ],
+  "MNE": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Zákaz",
+      "text": "Čierna Hora uplatňuje zákaz nocovania na plážach, v národných parkoch a vo voľnej prírode. Používajte oficiálne kempy alebo Stellplatz.",
+      "ikona": "⛔"
+    }
+  ],
+  "ALB": [
+    {
+      "id": 1,
+      "typ": "Divoké Kempovanie: Tolerované (Zatiaľ)",
+      "text": "Napriek neexistencii oficiálneho zákazu je kempovanie v blízkosti turistických oblastí a národných parkov obmedzené. Tolerancia je vysoká, ale buďte ohľaduplní k prírode.",
+      "ikona": "👍"
+    }
+  ],
+  "speedLimits": {
+    "SK": {
+      "country": "Slovensko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 90,
+        "expressway": 90,
+        "highway": 90
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 90,
+        "expressway": 90,
+        "highway": 90
+      }
+    },
+    "AT": {
+      "country": "Rakúsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 100,
+        "expressway": 100,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "DE": {
+      "country": "Nemecko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "FR": {
+      "country": "Francúzsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 110
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 110
+      }
+    },
+    "IT": {
+      "country": "Taliansko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 70,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 70,
+        "highway": 80
+      }
+    },
+    "CH": {
+      "country": "Švajčiarsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "PL": {
+      "country": "Poľsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 80,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "FI": {
+      "country": "Fínsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "SE": {
+      "country": "Švédsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "DK": {
+      "country": "Dánsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "NL": {
+      "country": "Holandsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 90,
+        "expressway": 90,
+        "highway": 90
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "BE": {
+      "country": "Belgicko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 90,
+        "highway": 90
+      }
+    },
+    "ES": {
+      "country": "Španielsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 90,
+        "highway": 90
+      }
+    },
+    "SLO": {
+      "country": "Slovinsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "HU": {
+      "country": "Maďarsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 80,
+        "highway": 80
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "HR": {
+      "country": "Chorvátsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 110
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 90
+      }
+    },
+    "GR": {
+      "country": "Grécko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 90,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 90
+      }
+    },
+    "SRB": {
+      "country": "Srbsko",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 90,
+        "highway": 100
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 100
+      }
+    },
+    "BiH": {
+      "country": "Bosna a Hercegovina",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 90,
+        "highway": 110
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "MNE": {
+      "country": "Čierna Hora",
+      "<= 3.5t": {
+        "town": 50,
+        "outskirts": 70,
+        "expressway": 90,
+        "highway": 110
+      },
+      "> 3.5t": {
+        "town": 50,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    },
+    "ALB": {
+      "country": "Albánsko",
+      "<= 3.5t": {
+        "town": 40,
+        "outskirts": 70,
+        "expressway": 90,
+        "highway": 90
+      },
+      "> 3.5t": {
+        "town": 40,
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 80
+      }
+    }
+  },
+  "vignetteLinks": {
+    "SK": {
+      "<= 3.5t": "https://eznamka.sk/",
+      "> 3.5t": "https://eznamka.sk/"
+    },
+    "AT": {
+      "<= 3.5t": "https://shop.asfinag.at/sk/",
+      "> 3.5t": "https://go-maut.at/go-maut/sk/"
+    },
+    "DE": {
+      "<= 3.5t": "https://www.adac.de/reise-freizeit/maut-vignette/",
+      "> 3.5t": "https://www.toll-collect.de/sk/kunden/toll-collect-system/system-v-kocke.html"
+    },
+    "CH": {
+      "<= 3.5t": "https://www.ezv.admin.ch/ezv/sk/home/e-services/autobahnvignette.html",
+      "> 3.5t": "https://www.ezv.admin.ch/ezv/sk/home/e-services/autobahnvignette.html"
+    },
+    "FR": {
+      "<= 3.5t": "https://www.autoroutes.fr/en/toll.htm",
+      "> 3.5t": "https://www.autoroutes.fr/en/toll.htm"
+    },
+    "IT": {
+      "<= 3.5t": "https://www.autostrade.it/en/home",
+      "> 3.5t": "https://www.autostrade.it/en/home"
+    },
+    "PL": {
+      "<= 3.5t": "https://etoll.gov.pl/en/",
+      "> 3.5t": "https://etoll.gov.pl/en/"
+    },
+    "FI": {
+      "<= 3.5t": "https://vayla.fi/en/web/en/highways",
+      "> 3.5t": "https://vayla.fi/en/web/en/highways"
+    },
+    "SE": {
+      "<= 3.5t": "https://www.transportstyrelsen.se/en/road/tolls-and-fees/",
+      "> 3.5t": "https://www.transportstyrelsen.se/en/road/tolls-and-fees/"
+    },
+    "DK": {
+      "<= 3.5t": "https://www.storebaelt.dk/english",
+      "> 3.5t": "https://www.storebaelt.dk/english"
+    },
+    "NL": {
+      "<= 3.5t": "https://www.rijkswaterstaat.nl/en/traveller-information",
+      "> 3.5t": "https://www.rijkswaterstaat.nl/en/traveller-information"
+    },
+    "BE": {
+      "<= 3.5t": "https://www.vignette.be/en",
+      "> 3.5t": "https://www.vignette.be/en"
+    },
+    "ES": {
+      "<= 3.5t": "https://www.seitt.es/seitt/index.htm",
+      "> 3.5t": "https://www.seitt.es/seitt/index.htm"
+    },
+    "SLO": {
+      "<= 3.5t": "https://evinjeta.dars.si/en",
+      "> 3.5t": "https://evinjeta.dars.si/en"
+    },
+    "HU": {
+      "<= 3.5t": "https://www.nemzetiutdij.hu/en",
+      "> 3.5t": "https://www.nemzetiutdij.hu/en"
+    },
+    "HR": {
+      "<= 3.5t": "https://hac.hr/en",
+      "> 3.5t": "https://hac.hr/en"
+    },
+    "GR": {
+      "<= 3.5t": "https://www.aodos.gr/en/",
+      "> 3.5t": "https://www.aodos.gr/en/"
+    },
+    "SRB": {
+      "<= 3.5t": "https://putevi-srbije.rs/index.php/en/",
+      "> 3.5t": "https://putevi-srbije.rs/index.php/en/"
+    },
+    "BiH": {
+      "<= 3.5t": "https://www.jpautoceste.ba/en/toll-collection-system",
+      "> 3.5t": "https://www.jpautoceste.ba/en/toll-collection-system"
+    },
+    "MNE": {
+      "<= 3.5t": "https://www.autoput.me/en",
+      "> 3.5t": "https://www.autoput.me/en"
+    },
+    "ALB": {
+      "<= 3.5t": "https://www.autostradatirana.al/en/",
+      "> 3.5t": "https://www.autostradatirana.al/en/"
+    }
+  }
+}
