@@ -4,6 +4,42 @@
   "last_updated": "2025-12-12",
   "modules": [
     {
+  "id": "promo_codes_info",
+  "title": {
+    "sk": "Ako uplatniť darčekový kód",
+    "en": "How to redeem a gift code",
+    "de": "Geschenkcode einlösen"
+  },
+  "icon": "card_giftcard",
+  "sections": [
+    {
+      "heading": {
+        "sk": "ZÍSKALI STE KÓD OD PARTNERA?",
+        "en": "DID YOU GET A CODE FROM A PARTNER?",
+        "de": "HABEN SIE EINEN CODE VON EINEM PARTNER?"
+      },
+      "content": {
+        "sk": "Ak ste od nášho partnera (napr. KaravanServis) získali promo kód, môžete si ním odomknúť prémiový obsah aplikácie úplne zadarmo. Tento kód je jednorazový a nahrádza priamu platbu v obchode Google Play.",
+        "en": "If you received a promo code from our partner (e.g., KaravanServis), you can use it to unlock premium app content for free. This code is for one-time use and replaces direct payment in the Google Play Store.",
+        "de": "Wenn Sie von unserem Partner (z. B. KaravanServis) einen Promo-Code erhalten haben, können Sie damit Premium-App-Inhalte kostenlos freischalten. Dieser Code ist zur einmaligen Verwendung bestimmt und ersetzt die direkte Zahlung im Google Play Store."
+      }
+    },
+    {
+      "heading": {
+        "sk": "POSTUP UPLATNENIA KÓDU",
+        "en": "HOW TO REDEEM THE CODE",
+        "de": "SO LÖSEN SIE DEN CODE EIN"
+      },
+      "content": {
+        "sk": "1. Otvorte aplikáciu Obchod Google Play.\n2. Klepnite na ikonu vášho profilu (vpravo hore).\n3. Vyberte položku 'Platby a odbery' a následne 'Uplatniť kód'.\n4. Zadajte váš kód a potvrďte. Obsah v aplikácii sa následne automaticky sprístupní.\n\nKód môžete zadať aj priamo v našej aplikácii pri pokuse o nákup: v platobnom okne Google Play kliknite na šípku pri spôsobe platby a zvoľte 'Uplatniť kód'.",
+        "en": "1. Open the Google Play Store app.\n2. Tap your profile icon (top right).\n3. Select 'Payments & subscriptions' and then 'Redeem code'.\n4. Enter your code and confirm. The content in the app will then be automatically unlocked.\n\nYou can also enter the code directly in our app when trying to make a purchase: in the Google Play payment window, click the arrow next to the payment method and choose 'Redeem code'.",
+        "de": "1. Öffnen Sie die Google Play Store App.\n2. Tippen Sie auf Ihr Profilsymbol (oben rechts).\n3. Wählen Sie 'Zahlungen & Abos' und dann 'Code einlösen'.\n4. Geben Sie Ihren Code ein und bestätigen Sie. Der Inhalt in der App wird dann automatisch freigeschaltet.\n\nSie können den Code auch direkt in unserer App beim Kaufversuch eingeben: Klicken Sie im Google Play-Zahlungsfenster auf den Pfeil neben der Zahlungsmethode und wählen Sie 'Code einlösen'."
+      }
+    }
+  ]
+    },
+    
+    {
       "id": "intro_warnings",
       "title": {
         "sk": "Úvod a dopravné info",
