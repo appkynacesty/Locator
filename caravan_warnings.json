@@ -213,15 +213,18 @@
   "HU": {
     "sk": [
       { "id": 1, "typ": "Nocovanie mimo kempov: Zákaz", "text": "Nocovanie vo voľnej prírode a na parkoviskách je nelegálne.", "ikona": "⛔" },
-      { "id": 2, "typ": "Upozornenie", "text": " Tieto limity sú orientačné a nastavené podľa prísnejších pravidiel pre súpravy. Vždy sledujte lokálne dopravné značenie a technické limity vášho vozidla.", "ikona": "⚠️" }
+      { "id": 2, "typ": "Diaľničné poplatky", "text": "Pozor na diaľničné známky v Maďarsku! Autá typu N1 (dodávky) a všetky obytné autá musia mať známku D2. Ak ťaháte príves za vozidlom D2, potrebujete preň dodatočnú známku kategórie U.", "ikona": "⚠️" },
+      { "id": 3, "typ": "Upozornenie", "text": " Tieto limity sú orientačné a nastavené podľa prísnejších pravidiel pre súpravy. Vždy sledujte lokálne dopravné značenie a technické limity vášho vozidla.", "ikona": "⚠️" }
     ],
     "en": [
       { "id": 1, "typ": "Wild Camping: Prohibited", "text": "Staying overnight in nature or public car parks is illegal.", "ikona": "⛔" },
-      { "id": 2, "typ": "Notice", "text": " These limits are indicative and based on stricter rules for vehicle combinations. Always follow local traffic signs and your vehicle's technical limits.", "ikona": "⚠️" }
+      { "id": 2, "typ": "Toll Fees", "text": "Attention regarding Hungarian vignettes! N1 category vehicles (vans) and all motorhomes must have a D2 vignette. If you are towing a trailer with a D2 category vehicle, an additional category U vignette is required for the trailer.", "ikona": "⚠️" },
+      { "id": 3, "typ": "Notice", "text": " These limits are indicative and based on stricter rules for vehicle combinations. Always follow local traffic signs and your vehicle's technical limits.", "ikona": "⚠️" }
     ],
     "de": [
       { "id": 1, "typ": "Wildcamping: Verboten", "text": "Übernachten in der Natur oder auf öffentlichen Parkplätzen ist illegal.", "ikona": "⛔" },
-      { "id": 2, "typ": "Hinweis", "text": " Diese Limits sind Richtwerte und nach strengeren Regeln für Gespanne festgelegt. Beachten Sie immer die lokale Beschilderung und die technischen Limits Ihres Fahrzeugs.", "ikona": "⚠️" }
+      { "id": 2, "typ": "Mautgebühren", "text": "Achtung bei Autobahnvignetten in Ungarn! Fahrzeuge der Klasse N1 (Transporter) und alle Wohnmobile benötigen die D2-Vignette. Wenn Sie einen Anhänger hinter einem D2-Fahrzeug ziehen, ist für diesen eine zusätzliche Vignette der Klasse U erforderlich.", "ikona": "⚠️" },
+      { "id": 3, "typ": "Hinweis", "text": " Diese Limits sind Richtwerte und nach strengeren Regeln für Gespanne festgelegt. Beachten Sie immer die lokale Beschilderung und die technischen Limits Ihres Fahrzeugs.", "ikona": "⚠️" }
     ]
   },
   "HR": {
@@ -357,6 +360,7 @@
     "ALB": { "<= 3.5t": "https://www.autostradatirana.al/en/", "> 3.5t": "https://www.autostradatirana.al/en/" }
   }
 }
+
 
 
 
